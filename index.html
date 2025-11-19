@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sweet Bakery – Delicious Freshly Baked Treats</title>
+  <meta name="description" content="Sweet Bakery offers fresh cakes, pastries, and bread made daily with love. Visit us or order online today!" />
+  <link rel="stylesheet" href="style.css" />
+
+
+  <style>
+    /* Accordion styles */
+    .accordion-btn {
+      background-color: #eee;
+      cursor: pointer;
+      padding: 10px;
+      border: none;
+      outline: none;
+      width: 100%;
+      text-align: left;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .accordion-btn.active {
+      background-color: #ccc;
+    }
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #fafafa;
+      padding: 0 10px;
+    }
+    /* Product container */
+    #productsContainer div {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Sweet Bakery</h1>
+    <nav>
+      <a href="index.html">Home</a> | 
+      <a href="enquiry.html">Enquiry</a> | 
+      <a href="contact.html">Contact</a> |
+      <a href="about.html">About</a> |
+      <a href="products.html">Products</a> |
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <button class="accordion-btn">What are your opening hours?</button>
+        <div class="panel"><p>We are open Monday to Saturday, 8am to 6pm.</p></div>
+
+        <button class="accordion-btn">Do you offer gluten-free options?</button>
+        <div class="panel"><p>Yes! We have gluten-free cakes and pastries available.</p></div>
+
+        <button class="accordion-btn">Where are you located?</button>
+        <div class="panel"><p>123 Sweet St, Bloemfontein, South Africa</p></div>
+      </div>
+    </section>
+
+    
+    <section>
+      <h2>Gallery</h2>
+      <a href="OIP.webp" data-lightbox="bakery" data-title="Chocolate Fudge Cake">
+        <img src="OIP.webp" alt="Chocolate Fudge Cake" width="150" />
+      </a>
+      <a href="OIP (1).webp" data-lightbox="bakery" data-title="Vanilla Cupcake">
+        <img src="OIP (1).webp" alt="Vanilla Cupcake" width="150" />
+      </a>
+      <a href="R.jpeg" data-lightbox="bakery" data-title="Lemon Tart">
+        <img src="R.jpeg" alt="Lemon Tart" width="150" />
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sweet Bakery. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  <!-- Your JS -->
+  <script>
+    // Accordion functionality
+    const accButtons = document.querySelectorAll('.accordion-btn');
+    accButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const panel = btn.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    });
+
+   
+
+    document.getElementById('loadMore').addEventListener('click', () => {
+      if (productIndex >= products.length) return;
+      const container = document.getElementById('productsContainer');
+      const product = products[productIndex];
+      const productEl = document.createElement('div');
+      productEl.textContent = $;{product.name} - $;{product.price};
+      container.appendChild(productEl);
+      productIndex++;
+    });
+  </script>
+</body>
+</html>

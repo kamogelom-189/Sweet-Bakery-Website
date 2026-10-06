@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('productsContainer');
       const product = products[productIndex];
       const productEl = document.createElement('div');
-      productEl.textContent = $;{product.name} - $;{product.price};
+      productEl.textContent = `${product.name} - ${product.price}`;
       container.appendChild(productEl);
       productIndex++;
     });
